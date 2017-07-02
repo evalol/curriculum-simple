@@ -11,13 +11,18 @@ footer {
     background: #666;
 }
 
+#languaje {
+    left: 0;
+}
+
 
 #identify, #presentation, #experience, #studies, #contact {
     height: 100%;
 }
 
 #identify {
-    background: #000;
+    background: url("../images/initial.jpg");
+    background-repeat:no-repeat;
 } 
 
 #presentation {
@@ -43,4 +48,8 @@ footer {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;    
+}
+
+.fa {
+    color: #fff;
 }
