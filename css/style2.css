@@ -1,6 +1,5 @@
 * {
-    font-family: 'Cutive Mono', monospace;    
-    background: #fff;
+    font-family: 'Cutive Mono', monospace;       
 }
 
 header {
@@ -40,6 +39,36 @@ footer {
 #contact {
      background: #000;
 }
+
+#footer {
+	background: #4db8b8;
+}
+
+.flexHorizontal {
+	display: -webkit-flex;
+   	display: flex;
+   	-webkit-flex-direction: row;
+   	flex-direction: row;		
+}
+
+.flexVertial {
+	display: -webkit-flex;
+   	display: flex;
+   	-webkit-flex-direction: column;
+   	flex-direction: column;
+}
+
+.flexVertialCenter {
+	display: -webkit-flex;
+   	display: flex;
+   	-webkit-flex-direction: column; /* works with row or column */
+   	flex-direction: column;
+   	-webkit-align-items: center;
+   	align-items: center;
+   	-webkit-justify-content: center;
+   	justify-content: center;	
+}
+
 
 .circle {
     border: 6px solid #4db8b8;
