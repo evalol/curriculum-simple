@@ -22,20 +22,20 @@ function getPoses(poses) {
         noseY = poses[0].pose.keypoints[0].position.y;
     
         eye1X = poses[0].pose.keypoints[1].position.x + 6;
-        eye1Y = poses[0].pose.keypoints[1].position.y + 6;
+        eye1Y = poses[0].pose.keypoints[1].position.y;
     
         eye2X = poses[0].pose.keypoints[2].position.x - 6;
-        eye2Y = poses[0].pose.keypoints[2].position.y - 6;
+        eye2Y = poses[0].pose.keypoints[2].position.y;
     }
 }
 
 function modelReady() {
-  console.log('model ready');
+  console.log('Yeaaah! The model is ready!');
 }
 
 function draw() {
 
-    image(video,20, 20);
+    image(video, 10, 10);
   
     eye(eye1X, eye1Y, 80, 1);
     eye(eye2X, eye2Y, 80, -1);
@@ -46,7 +46,7 @@ function draw() {
 
 function eye(x, y, size, n) {
     
-    let angle = frameCount * 0.3;
+    let angle = frameCount * 0.4;
 	console.log(frameCount);
 	fill(255);
 	noStroke();
@@ -54,5 +54,6 @@ function eye(x, y, size, n) {
 	
 	fill(56);
 	noStroke();
-	ellipse(x + cos(angle * n) * size / 5, y + sin(angle * n) * size / 5, size / 2, size / 2);
+    ellipse(x + cos(angle) * size / 5, y + sin(angle) * size / 5, size / 2.5, size / 2.5);
+    noFill();
 }
