@@ -29,11 +29,11 @@ function getPoses(poses) {
         eye2X = poses[0].pose.keypoints[2].position.x - 6;
         eye2Y = poses[0].pose.keypoints[2].position.y;
         
-        ear1X = poses[0].pose.keypoints[3].position.x;
-        ear1Y = poses[0].pose.keypoints[3].position.y - 120;
+        ear1X = poses[0].pose.keypoints[3].position.x - 20;
+        ear1Y = poses[0].pose.keypoints[3].position.y - 110;
 
-        ear2X = poses[0].pose.keypoints[4].position.x;
-        ear2Y = poses[0].pose.keypoints[4].position.y - 120;
+        ear2X = poses[0].pose.keypoints[4].position.x + 20;
+        ear2Y = poses[0].pose.keypoints[4].position.y - 110;
     }
 }
 
@@ -50,8 +50,8 @@ function draw() {
 
     nose();
 
-    ear(ear1X, ear1Y, 50, 50);
-    ear(ear2X, ear2Y, 50, 50);
+    ear(ear1X, ear1Y, 55, 65);   
+    ear(ear2X, ear2Y, 55, 65);
 }
 
 function nose(){
@@ -73,13 +73,21 @@ function eye(x, y, size, n) {
     	
 	fill(56);
 	noStroke();
-    ellipse(x + cos(angle) * size / 5, y + sin(angle) * size / 5, size / 2.5, size / 2.5);
-    noFill();
+    ellipse(x + cos(angle) * size / 5, y + cos(angle) * size / 5, size / 2.5, size / 2.5); 
 }
 
 function ear(x, y, size, n) {
 
-    fill(255);
+    fill(77, 65, 70);
     noStroke();
-    arc(x, y , size, n, PI, TWO_PI);
+    arc(x, y , size, n, PI, TWO_PI);  
+    noFill();
+
+    fill(0, 0, 0);
+    noStroke();
+    arc(x, y , size - 20, n - 20, PI, TWO_PI);     
+    noFill();
+
+    //rotate(rot);
+    //noStroke(); noFill();
 }
